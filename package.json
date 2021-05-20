@@ -1,13 +1,11 @@
 {
-  "name": "next-auth-example",
+  "name": "healthstock",
   "version": "0.0.0",
   "private": true,
-  "description": "An example project for NextAuth.js",
-  "repository": "https://github.com/nextauthjs/next-auth-example.git",
-  "bugs": {
-    "url": "https://github.com/nextauthjs/next-auth/issues"
-  },
-  "homepage": "http://next-auth-example.now.sh",
+  "description": "stocks op",
+  "repository": "",
+
+  "homepage": "",
   "main": "",
   "scripts": {
     "dev": "next",
