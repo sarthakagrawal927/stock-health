@@ -97,13 +97,13 @@ Notes:
 
 To run your site locally, use:
 
-```
+```bash
 npm run dev
 ```
 
 To run it it production mode, use:
 
-```
+```bash
 npm build
 npm start
 ```

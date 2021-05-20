@@ -20,10 +20,11 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "next": "^10.0.7",
-    "next-auth": "latest",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "sqlite3": "^5.0.2"
+    "@prisma/client": "^2.23.0",
+    "mongodb": "^3.6.7",
+    "next": "^10.2.2",
+    "next-auth": "^3.23.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
