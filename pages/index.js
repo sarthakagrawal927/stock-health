@@ -1,12 +1,12 @@
-import Layout from '../components/layout'
+import Layout from "../components/layout";
+import Select from "react-select";
+const data = require("../stock_data/test.json");
 
-export default function Page () {
+export default function Page() {
   return (
     <Layout>
-      <h1>NextAuth.js Example</h1>
-      <p>
-        This is an example site to demonstrate how to use <a href={`https://next-auth.js.org`}>NextAuth.js</a> for authentication.
-      </p>
+      <h1>Stock Health</h1>
+      <Select options={data} instanceId='some random ID' isMulti />
     </Layout>
-  )
+  );
 }
