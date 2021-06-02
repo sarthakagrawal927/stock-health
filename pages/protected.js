@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSession } from "next-auth/client";
 import Layout from "../components/layout";
 import AccessDenied from "../components/access-denied";
+import App from "../components/app";
 
 export default function Page() {
   const [session, loading] = useSession();
@@ -34,12 +35,8 @@ export default function Page() {
   // If session exists, display content
   return (
     <Layout>
-      <h1>Protected Page</h1>
-      <p>
-        <strong>{content || "\u00a0"}</strong>
-        Showing results for <br />
-        {session.user.email}
-      </p>
+      <p>Welcome {session.user.name} !</p>
+      <App />
     </Layout>
   );
 }

@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@prisma/client': ^2.23.0
   autoprefixer: ^10.2.6
+  immer: ^9.0.2
   mongodb: ^3.6.7
   next: ^10.2.2
   next-auth: ^3.23.1
@@ -15,6 +16,7 @@ specifiers:
 
 dependencies:
   '@prisma/client': 2.23.0
+  immer: 9.0.2
   mongodb: 3.6.7
   next: 10.2.2_824618ef387285820a24718328d0100f
   next-auth: 3.23.1_f7fb9bd89d09834c3ed766a388aedbe4
@@ -1290,6 +1292,10 @@ packages:
 
   /ieee754/1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
+    dev: false
+
+  /immer/9.0.2:
+    resolution: {integrity: sha512-mkcmzLtIfSp40vAqteRr1MbWNSoI7JE+/PB36FNPoSfJ9RQRmNKuTYCjKkyXyuq3Dgn07HuJBrwJd4ZSk2yUbw==}
     dev: false
 
   /inflight/1.0.6:
