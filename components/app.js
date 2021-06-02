@@ -6,8 +6,6 @@ const App = () => {
     <StocksProvider>
       <Dropdown />
       <List />
-      <button>Save to backend</button>
-      <button>Get Health</button>
     </StocksProvider>
   );
 };

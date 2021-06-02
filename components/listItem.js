@@ -10,27 +10,20 @@ const ListItem = ({ stock }) => {
       <td>{stock.name}</td>
       <td>{stock.id}</td>
       <td>
-        {" "}
         <input
           type='number'
-          name={stock.id}
-          id=''
           value={val}
-          onChange={(e) => setVal(e.target.value)}
-        />
-      </td>
-      <td>
-        {" "}
-        <button
-          onClick={() => {
+          onChange={(e) => {
+            setVal(e.target.value);
             dispatch({
               type: "UPDATE_QUANTITY",
               id: stock.id,
-              newQuantity: val,
+              newQuantity: e.target.value,
             });
-          }}>
-          Save
-        </button>
+          }}
+        />
+      </td>
+      <td>
         <button
           onClick={() => {
             dispatch({ type: "DELETE_STOCK", id: stock.id });
