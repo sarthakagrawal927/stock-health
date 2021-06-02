@@ -1,21 +1,26 @@
-const stockReducer = (state, action) => {
-  switch (action.type) {
-    case "ADD":
-      return [...state, { id: 1, task: action.task, completed: false }];
-    case "REMOVE":
-      return state.filter((todo) => todo.id !== action.id);
-    case "TOGGLE":
-      return state.map((todo) =>
-        todo.id === action.id ? { ...todo, completed: !todo.completed } : todo,
-      );
+import produce from "immer";
 
-    case "EDIT":
-      return state.map((todo) =>
-        todo.id === action.id ? { ...todo, task: action.newTask } : todo,
-      );
-    default:
-      return state;
+const stockReducer = produce((draft, action) => {
+  let index;
+  switch (action.type) {
+    case "ADD_STOCKS":
+      for (let i = 0; i < action.stocks.length; i++) {
+        draft.push(action.stocks[i]);
+      }
+      break;
+
+    case "UPDATE_QUANTITY":
+      index = draft.findIndex((stock) => stock.id === action.id);
+
+      if (index !== -1) draft[index].quantity = action.newQuantity;
+
+      break;
+
+    case "DELETE_STOCK":
+      index = draft.findIndex((stock) => stock.id === action.id);
+      if (index !== -1) draft.splice(index, 1);
+      break;
   }
-};
+});
 
 export default stockReducer;
