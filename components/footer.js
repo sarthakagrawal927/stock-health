@@ -15,11 +15,6 @@ export default function Footer() {
         <li className={styles.navItem}>
           <a href='https://github.com/nextauthjs/next-auth-example'>GitHub</a>
         </li>
-        <li className={styles.navItem}>
-          <Link href='/policy'>
-            <a>Policy</a>
-          </Link>
-        </li>
       </ul>
     </footer>
   );

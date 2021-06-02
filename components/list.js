@@ -7,11 +7,20 @@ const List = () => {
   console.log(stocks);
   if (stocks.length === 0) return <>Add stocks</>;
   return (
-    <div>
-      {stocks.map((stock) => (
-        <ListItem stock={stock} key={stock.id} />
-      ))}
-    </div>
+    <table className='table-auto bg-blue-200'>
+      <thead>
+        <tr>
+          <th>Name</th> <th>ID</th>
+          <th>Quantity</th> <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {" "}
+        {stocks.map((stock) => (
+          <ListItem stock={stock} key={stock.id} />
+        ))}
+      </tbody>
+    </table>
   );
 };
 
