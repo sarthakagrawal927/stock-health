@@ -21,6 +21,21 @@ const List = () => {
     });
   }
 
+  function getData() {
+    fetch("http://ec2-13-233-112-208.ap-south-1.compute.amazonaws.com:8000/", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    }).then((res) => {
+      if (res.ok) {
+        console.log(res);
+        return res.json();
+      }
+    });
+  }
+
   console.log(stocks);
   if (stocks.length === 0) return <>Add stocks</>;
   return (
@@ -29,7 +44,7 @@ const List = () => {
       <table className='table-auto bg-blue-200'>
         <thead>
           <tr>
-            <th>Name</th> <th>ID</th>
+            <th>Name</th>
             <th>Quantity</th> <th>Actions</th>
           </tr>
         </thead>
@@ -41,7 +56,7 @@ const List = () => {
         </tbody>
       </table>
       <button onClick={handleSave}>Save to backend</button>
-      <button>Get Health</button>
+      <button onClick={getData}>Get Health</button>
     </>
   );
 };

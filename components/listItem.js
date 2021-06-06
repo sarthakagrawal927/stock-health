@@ -8,7 +8,6 @@ const ListItem = ({ stock }) => {
   return (
     <tr>
       <td>{stock.name}</td>
-      <td>{stock.id}</td>
       <td>
         <input
           type='number'
