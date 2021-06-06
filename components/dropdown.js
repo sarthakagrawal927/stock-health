@@ -46,6 +46,7 @@ const Dropdown = () => {
                 name: stock.label,
                 quantity: 1,
                 id: stock.value,
+                health: null,
               };
             });
             dispatch({ type: "ADD_STOCKS", stocks: stocks });

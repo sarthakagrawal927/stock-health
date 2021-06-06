@@ -20,6 +20,9 @@ const stockReducer = produce((draft, action) => {
       index = draft.findIndex((stock) => stock.id === action.id);
       if (index !== -1) draft.splice(index, 1);
       break;
+
+      case "ADD_HEALTH":
+        break;
   }
 });
 

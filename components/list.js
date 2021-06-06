@@ -22,21 +22,22 @@ const List = () => {
   }
 
   function getData() {
-    fetch("http://ec2-13-233-112-208.ap-south-1.compute.amazonaws.com:8000/", {
-      method: "GET",
+    fetch(process.env.NEXT_PUBLIC_REQ_URL, {
+      method: "POST",
+      body: JSON.stringify({ stocks: stocks }),
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
     }).then((res) => {
       if (res.ok) {
-        console.log(res);
-        return res.json();
+        res.json().then(resp => {
+          console.log(resp); 
+        })
       }
     });
   }
 
-  console.log(stocks);
   if (stocks.length === 0) return <>Add stocks</>;
   return (
     <>
