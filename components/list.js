@@ -42,6 +42,7 @@ const List = () => {
   return (
     <>
       {" "}
+      <p>By {process.env.NEXT_PUBLIC_REQ_URL}</p>
       <table className='table-auto bg-blue-200'>
         <thead>
           <tr>
