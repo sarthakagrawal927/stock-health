@@ -36,7 +36,6 @@ const List = () => {
     }).then((res) => {
       if (res.ok) {
         res.json().then((resp) => {
-          console.log(resp);
           dispatch({ type: "ADD_HEALTH", stocks: resp.data });
         });
       }

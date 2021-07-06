@@ -15,7 +15,6 @@ const Dropdown = () => {
     }).then((res) => {
       if (res.ok) {
         res.json().then((data) => {
-          console.log(data.user.stocks);
           dispatch({ type: "ADD_STOCKS", stocks: data.user?.stocks });
         });
       }
@@ -34,7 +33,6 @@ const Dropdown = () => {
         options={data}
         instanceId='some randomID'
         onChange={(event) => {
-          console.log(event);
           setVal(event);
         }}
       />

@@ -22,7 +22,7 @@ const ListItem = ({ stock }) => {
             });
           }}
         />
-      </td>{" "}
+      </td>
       <td>{stock.health}</td>
       <td>
         <button
