@@ -22,8 +22,11 @@ const stockReducer = produce((draft, action) => {
       break;
 
     case "ADD_HEALTH":
+      console.log(action.stocks);
       for (let i = 0; i < action.stocks.length; i++) {
         const stock = draft.find((stock) => stock.id === action.stocks[i].id);
+        // console.log(stock.health);
+        // console.log(action.stocks[i].health);
         stock.health = action.stocks[i].health;
       }
       break;

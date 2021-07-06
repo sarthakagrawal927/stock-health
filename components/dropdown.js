@@ -33,6 +33,7 @@ const Dropdown = () => {
         options={data}
         instanceId='some randomID'
         onChange={(event) => {
+          console.log(val);
           setVal(event);
         }}
       />
