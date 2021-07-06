@@ -11,6 +11,7 @@ const ListItem = ({ stock }) => {
       <td>
         <input
           type='number'
+          min='1'
           value={val}
           onChange={(e) => {
             setVal(e.target.value);
@@ -18,7 +19,6 @@ const ListItem = ({ stock }) => {
               type: "UPDATE_QUANTITY",
               id: stock.id,
               newQuantity: e.target.value,
-              health: "asd",
             });
           }}
         />

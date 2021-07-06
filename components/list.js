@@ -6,7 +6,7 @@ const List = () => {
   const stocks = useContext(StocksContext);
   const dispatch = useContext(DispatchContext);
 
-  function handleSave() {
+  function saveToBackend() {
     fetch("/api/stock/", {
       method: "POST",
       body: JSON.stringify({ stocks: stocks }),
@@ -25,7 +25,7 @@ const List = () => {
     });
   }
 
-  function getData() {
+  function getHealth() {
     fetch(process.env.NEXT_PUBLIC_REQ_URL, {
       method: "POST",
       body: JSON.stringify({ stocks: stocks }),
@@ -43,7 +43,7 @@ const List = () => {
     });
   }
 
-  if (stocks.length === 0) return <>Add stocks</>;
+  if (!stocks || stocks?.length === 0) return <>Add stocks</>;
   return (
     <>
       {" "}
@@ -58,14 +58,13 @@ const List = () => {
           </tr>
         </thead>
         <tbody>
-          {" "}
           {stocks.map((stock) => (
             <ListItem stock={stock} key={stock.id} />
           ))}
         </tbody>
       </table>
-      <button onClick={handleSave}>Save to backend</button>
-      <button onClick={getData}>Get Health</button>
+      <button onClick={saveToBackend}>Save to backend</button>
+      <button onClick={getHealth}>Get Health</button>
     </>
   );
 };

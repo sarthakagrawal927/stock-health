@@ -15,7 +15,8 @@ const Dropdown = () => {
     }).then((res) => {
       if (res.ok) {
         res.json().then((data) => {
-          dispatch({ type: "ADD_STOCKS", stocks: data.user[0]?.stocks });
+          console.log(data.user.stocks);
+          dispatch({ type: "ADD_STOCKS", stocks: data.user?.stocks });
         });
       }
     });
