@@ -4,7 +4,7 @@ const stockReducer = produce((draft, action) => {
   let index;
   switch (action.type) {
     case "ADD_STOCKS":
-      for (let i = 0; i < action.stocks.length; i++) {
+      for (let i = 0; i < action.stocks?.length; i++) {
         draft.push(action.stocks[i]);
       }
       break;
@@ -21,8 +21,12 @@ const stockReducer = produce((draft, action) => {
       if (index !== -1) draft.splice(index, 1);
       break;
 
-      case "ADD_HEALTH":
-        break;
+    case "ADD_HEALTH":
+      for (let i = 0; i < action.stocks.length; i++) {
+        const stock = draft.find((stock) => stock.id === action.stocks[i].id);
+        stock.health = action.stocks[i].health;
+      }
+      break;
   }
 });
 

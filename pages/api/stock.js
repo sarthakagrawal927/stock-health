@@ -32,6 +32,8 @@ async function handler(req, res) {
     email: session.user.email,
   });
 
+  console.log(userTest);
+
   if (req.method === "POST") {
     const { stocks } = req.body;
     let result;
@@ -48,7 +50,9 @@ async function handler(req, res) {
         res.status(201).json({
           message: "Added Info",
         });
+        console.log("success saved");
       } catch (error) {
+        console.log(error.message);
         res.status(500).json({
           message: "Insertion failed",
         });
@@ -75,7 +79,7 @@ async function handler(req, res) {
   if (req.method === "GET") {
     if (!userTest) {
       res.status(404).json({
-        message: userTest,
+        message: "Error",
       });
     }
     res.status(200).json({

@@ -6,13 +6,13 @@ import App from "../components/app";
 
 export default function Page() {
   const [session, loading] = useSession();
-  const [content, setContent] = useState();
 
   // Fetch content from protected route
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("/api/examples/protected");
+      const res = await fetch("/api/stock");
       const json = await res.json();
+      console.log(json);
       if (json.content) {
         setContent(json.content);
       }
@@ -32,7 +32,6 @@ export default function Page() {
     );
   }
 
-  // If session exists, display content
   return (
     <Layout>
       <p>Welcome {session.user.name} !</p>

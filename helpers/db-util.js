@@ -25,6 +25,6 @@ export async function updateStocks(client, collection, stocks, email) {
 
 export async function getProfile(client, collection, filter) {
   const db = client.db("stock-health");
-  const documents = await db.collection(collection).find(filter).toArray();
-  return documents;
+  const document = await db.collection(collection).findOne(filter);
+  return document;
 }

@@ -18,10 +18,12 @@ const ListItem = ({ stock }) => {
               type: "UPDATE_QUANTITY",
               id: stock.id,
               newQuantity: e.target.value,
+              health: "asd",
             });
           }}
         />
-      </td>
+      </td>{" "}
+      <td>{stock.health}</td>
       <td>
         <button
           onClick={() => {

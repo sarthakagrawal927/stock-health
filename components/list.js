@@ -1,9 +1,10 @@
 import { useContext, useEffect } from "react";
 import ListItem from "./listItem";
-import { StocksContext } from "../contexts";
+import { StocksContext, DispatchContext } from "../contexts";
 
 const List = () => {
   const stocks = useContext(StocksContext);
+  const dispatch = useContext(DispatchContext);
 
   function handleSave() {
     fetch("/api/stock/", {
@@ -14,7 +15,10 @@ const List = () => {
         Accept: "application/json",
       },
     }).then((res) => {
-      if (res.ok) return res.json();
+      if (res.ok) {
+        console.log("Success");
+        return res.json();
+      }
       res.json().then((data) => {
         throw new Error(data.message || "Something went wrong");
       });
@@ -31,9 +35,10 @@ const List = () => {
       },
     }).then((res) => {
       if (res.ok) {
-        res.json().then(resp => {
-          console.log(resp); 
-        })
+        res.json().then((resp) => {
+          console.log(resp);
+          dispatch({ type: "ADD_HEALTH", stocks: resp.data });
+        });
       }
     });
   }
@@ -47,7 +52,9 @@ const List = () => {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Quantity</th> <th>Actions</th>
+            <th>Quantity</th>
+            <th>Health</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
