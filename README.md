@@ -1,6 +1,6 @@
 # Stock App
 
-Uses python function hosted on EC2 to compute health.
+Uses python function hosted on EC2 to compute health. [Not connected right now due to SSL issue]
 
 ## TODO
 
